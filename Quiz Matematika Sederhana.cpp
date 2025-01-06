@@ -7,7 +7,7 @@ Deskripsi : Permainan sederhana di mana pengguna harus menjawab pertanyaan matem
 #include <iostream>
 #include <cstdlib> // Untuk fungsi rand() dan srand()
 #include <ctime>   // Untuk fungsi time()
-#include <iomanip> //Untuk std::fixed dan std::setprecision(
+#include <iomanip> // Untuk std::fixed dan std::setprecision()
 
 using namespace std;
 
@@ -22,9 +22,9 @@ int main() {
         int num2 = rand() % 20 + 1; // Angka kedua
 
         // Menghasilkan operasi acak (0: penjumlahan, 1: pengurangan, 2: perkalian)
-        int operation = rand() % 4; // menghasilkan 4 operasi matematika
+        int operation = rand() % 4; // Menghasilkan 4 operasi matematika
 
-        double correctAnswer; // Variabel untuk menyimpan jawaban yang benar
+        float correctAnswer; // Variabel untuk menyimpan jawaban yang benar
 
         // Menentukan operasi dan jawaban yang benar
         if (operation == 0) { // Penjumlahan
@@ -33,13 +33,12 @@ int main() {
         } else if (operation == 1) { // Pengurangan
             correctAnswer = num1 - num2;
             cout << "Apa hasil dari " << num1 << " - " << num2 << "? ";
-        } else if (operation == 2) {//Perkalian
+        } else if (operation == 2) { // Perkalian
             correctAnswer = num1 * num2;
             cout << "Apa hasil dari " << num1 << " * " << num2 << "? ";
-        }else {//Pembagian
-            //Memastikan angka pertama tidak lebih kecil dari angka kedua
+        } else { // Pembagian
             if(num1 < num2){
-                swap(num1, num2);
+                swap(num1, num2); // Memastikan angka pertama tidak lebih kecil dari angka kedua
             }
             correctAnswer = static_cast<float> (num1) / num2;
             cout << "Apa hasil dari " << num1 << " / " << num2 << "? ";
@@ -52,7 +51,7 @@ int main() {
         if (userAnswer == correctAnswer) {
             cout << "\nYeayyy benar!" << endl;
         } else {
-           cout << fixed << setprecision(1); //agar angka di belakang koma tidak terlalu banyak
+           cout << fixed << setprecision(1); // Agar angka di belakang koma tidak terlalu banyak
             cout << "\nYah, jawaban Kamu salah :( \n\nJawaban yang benar adalah " << correctAnswer << endl;
         }
 
